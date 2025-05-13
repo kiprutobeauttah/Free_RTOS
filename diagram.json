@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-xiao-esp32-s3", "id": "esp", "top": 38.97, "left": 13.78, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": 6, "left": -73, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 147.95,
+      "left": -57.6,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 15.6,
+      "left": -101.8,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 167.15,
+      "left": -57.6,
+      "attrs": { "value": "1000" }
+    },
+    { "type": "wokwi-junction", "id": "j1", "top": 148.8, "left": 24, "attrs": {} }
+  ],
+  "connections": [
+    [ "led1:C", "r1:1", "black", [ "v0" ] ],
+    [ "led2:C", "r2:1", "black", [ "v0" ] ],
+    [ "r2:2", "j1:J", "black", [ "v0", "h27.6" ] ],
+    [ "j1:J", "r1:2", "black", [ "v0" ] ],
+    [ "esp:GND", "j1:J", "black", [ "h19.82", "v86.4" ] ],
+    [ "led2:A", "esp:D1", "violet", [ "v0" ] ],
+    [ "led1:A", "esp:D0", "gold", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
